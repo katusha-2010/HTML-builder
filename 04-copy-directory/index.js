@@ -15,7 +15,7 @@ fs.readdir(path.join(__dirname, 'files-copy'), {withFileTypes: true}, (err, file
     if(files) {
       files.forEach(file => fs.unlink(path.join(__dirname, 'files-copy', `${file.name}`), err => {
         if(err){throw err;}
-        console.log('Files deleted');
+        // console.log('Files deleted');
       }));      
     }
     return;
@@ -28,7 +28,7 @@ fs.readdir(path.join(__dirname, 'files'), {withFileTypes: true}, (err, files) =>
   } else {
     files.forEach(file => fs.copyFile(path.join(__dirname, 'files', `${file.name}`), path.join(__dirname, 'files-copy', `${file.name}`), err => {
       if(err){throw err;}
-      console.log('Files copied');      
+      // console.log('Files copied');      
     }));
   }
 });

@@ -38,7 +38,7 @@ function cleanFolders (pathFolder) {
         if(!file.isDirectory()){
           fs.unlink(pathFolder + `\\${file.name}`, err => {
             if(err){throw err;}
-            console.log('Files deleted');
+            // console.log('Files deleted');
           });
         } else {cleanFolders (path.join(__dirname, 'project-dist', 'assets', `${file.name}`));}
       }
@@ -59,7 +59,7 @@ function copyFolders (pathFolderFrom, pathFolderIn) {
         if (!file.isDirectory()) {
           fs.copyFile(pathFolderFrom + `\\${file.name}`, pathFolderIn + `\\${file.name}`, err => {
             if(err){throw err;}
-            console.log('Files copied');      
+            // console.log('Files copied');      
           });
         } else {
           fs.mkdir(pathFolderIn + `\\${file.name}`, {recursive: true}, error => {
